@@ -1,0 +1,25 @@
+# NHANES raw files are public-domain but huge, don't redistribute
+*.xpt
+*.XPT
+*.xpt.txt
+
+# derived large files
+analytic_full.csv
+paxmin_output/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# R
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj.user/
+
+# editors
+.vscode/
+.idea/
+.DS_Store
