@@ -1,0 +1,7 @@
+step,n_remaining,n_excluded_at_step
+0_full_demo,10175,0.0
+1_mec_examined,9813,362.0
+2_age_ge_40,3708,6105.0
+3_not_pregnant,3705,3.0
+4_completed_PST,3094,611.0
+5_no_recent_URI,2857,237.0
