@@ -10,7 +10,6 @@
 
 This checklist follows the STROBE Statement for the reporting of cross-sectional studies (von Elm et al., *PLoS Med* 2007;4(10):e296). Page numbers refer to the v25 manuscript PDF.
 
----
 
 ## Title and abstract
 
@@ -74,7 +73,6 @@ This checklist follows the STROBE Statement for the reporting of cross-sectional
 |---|---|---|---|---|
 | 22 | Funding | Give the source of funding and the role of the funders for the present study and, if applicable, for the original study on which the present article is based | 8 | Conflict of Interest and Authorship (funding declaration) |
 
----
 
 ## Additional notes
 
@@ -82,6 +80,5 @@ This checklist follows the STROBE Statement for the reporting of cross-sectional
 - **Data sharing:** All raw data are publicly available from CDC NHANES at https://wwwn.cdc.gov/nchs/nhanes/. Analytic code, dataset reconstruction pipeline, and minute-level fragmentation extraction script are deposited at https://github.com/ceyhunolcan/od-activity-rhythm (Zenodo concept DOI 10.5281/zenodo.20132927).
 - **Reporting guideline followed:** STROBE statement for cross-sectional studies (von Elm et al., *PLoS Med* 2007;4(10):e296).
 
----
 
 *This checklist was prepared per STROBE Statement v4 guidelines. The corresponding author affirms that all 22 STROBE items have been addressed in the v25 manuscript and supplementary materials.*

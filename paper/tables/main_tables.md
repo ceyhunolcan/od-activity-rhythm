@@ -11,7 +11,6 @@
 - M4 covariates: age, sex, race/ethnicity, education, PIR, BMI, smoking, diabetes, comorbidity count, PHQ-9, sinusitis, head injury, n medications.
 - Missing/non-estimable cells: '—'.
 
----
 
 ## Table 1. Sample characteristics by olfactory dysfunction status
 
@@ -46,7 +45,6 @@
 | IV                       | 0.720 (0.226) | 0.714 (0.217) | 0.779 (0.288) | <0.001 |
 | RA                       | 0.954 (0.039) | 0.956 (0.036) | 0.939 (0.061) | <0.001 |
 
----
 
 ## Table 2. Aim 1 — Activity volume and intensity
 
@@ -58,7 +56,6 @@
 | Sedentary (min/d) | 7.300 (-5.800, 20.40)      | 0 (-13.10, 13.20)         | -1.900 (-14.60, 10.80)     | -2.900 (-16.60, 10.70)         |
 | MVPA (min/d)      | -10.90 (-14.50, -7.200)*** | -4.500 (-7.600, -1.300)** | -3.800 (-6.600, -1.000)*   | -3.400 (-6.400, -0.400)*       |
 
----
 
 ## Table 3. Aims 2 & 3 — 24-hour rhythm, sleep, and fragmentation
 
@@ -74,7 +71,6 @@
 | WASO (min)                  | 4.800 (1.400, 8.100)**      | 2.700 (-0.900, 6.200)     | 2.300 (-1.200, 5.800)     | 2.200 (-1.200, 5.600)          |
 | ASTP                        | 0.021 (0.0060, 0.035)**     | 0.014 (0.0030, 0.025)*    | 0.012 (0.0040, 0.021)**   | 0.011 (0.0030, 0.020)**        |
 
----
 
 ## Table 4. Effect modification by age, sex, smoking, and depression
 

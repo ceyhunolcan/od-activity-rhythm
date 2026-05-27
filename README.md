@@ -10,7 +10,6 @@ Ceyhun Olcan, Dartmouth College.
 - **OSF pre-registration** (paper #2 follow-up): https://doi.org/10.17605/OSF.IO/ZX8RN
 - **Zenodo archive of this repo** (citable concept DOI): https://doi.org/10.5281/zenodo.20132927
 
----
 
 ## What's here
 

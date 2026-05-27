@@ -13,7 +13,6 @@
 - Significance markers: \* p < 0.05, \*\* p < 0.01, \*\*\* p < 0.001.
 - Missing/non-estimable cells: '—'.
 
----
 
 ## Table S1. M4 model — complete coefficient table
 
@@ -242,7 +241,6 @@
 | ASTP              | Head injury             |  -0.0017   | (-0.042, 0.039)    | 0.694 |
 | ASTP              | N medications           |   0.0017   | (-0.015, 0.018)    | 0.418 |
 
----
 
 ## Table S2. M4 primary outcomes with BH-FDR-adjusted q-values
 
@@ -261,7 +259,6 @@
 | Aim 3 — WASO (min)                | WASO (min)        |  2.219  | (-1.211, 5.649)   | .196  |     0.287 |
 | Aim 3 — ASTP                      | ASTP              |  0.011  | (0.0030, 0.020)   | .009  |     0.036 |
 
----
 
 ## Table S3. E-values for unmeasured confounding
 
@@ -280,7 +277,6 @@
 | WASO (min)        | +2.219 (-1.211, +5.649)   | 0.196 |       0.114 |              1.46 |           1    |
 | ASTP              | +0.011 (+0.003, +0.020)   | 0.009 |       0.157 |              1.57 |           1.24 |
 
----
 
 ## Table S4. OD severity gradient analysis
 
@@ -299,7 +295,6 @@
 | WASO (min)        |             2.734  | (-0.753, 6.222)         |              0.228 |            -1.266  | (-8.308, 5.776)         |              0.745 |
 | ASTP              |             0.0078 | (-0.0017, 0.017)        |              0.228 |             0.037  | (0.0009, 0.073)         |              0.187 |
 
----
 
 ## Table S5. Multiple imputation (MICE) vs complete-case
 
@@ -318,7 +313,6 @@
 | WASO (min)        |   2.942  | (-0.051, 5.935)   | .054     |  2.219  | (-1.211, 5.649)   | .196   |
 | ASTP              |   0.012  | (0.0026, 0.022)   | .013     |  0.011  | (0.0030, 0.020)   | .009   |
 
----
 
 ## Table S6. Activity cut-point sensitivity
 
@@ -336,7 +330,6 @@
 | belcher         | light      | 2,055 | -31.37  | (-44.82, -17.92) | <.001 |
 | belcher         | mvpa       | 2,055 |  -3.377 | (-6.362, -0.392) | .028  |
 
----
 
 ## Table S7. IPSW plug-in estimates
 
@@ -350,7 +343,6 @@
 | IV            |   0.048 |   0.018  | .012    |    0.043 |    0.018  |    0.02  | -8.57%     |
 | ASTP          |   0.011 |   0.0041 | .009    |    0.011 |    0.0042 |    0.015 | -5.49%     |
 
----
 
 ## Table S8. IPSW with weight trimming
 
@@ -363,7 +355,6 @@
 |        0.99  | 1.332 |           21 | +4.06%       | +0.10%       | +5.95%     | -8.57%     | -5.49%       |
 |        0.999 | 1.355 |            3 | +4.04%       | +0.08%       | +5.97%     | -8.58%     | -5.47%       |
 
----
 
 ## Table S9. Bootstrap-IPSW with proper variance propagation
 
@@ -377,7 +368,6 @@
 | IV            |       0.043 |       0.018  |         0.043 | (-0.018, 0.112)    |         0.035  |                  1.977 |
 | ASTP          |       0.011 |       0.0042 |         0.011 | (-0.0044, 0.029)   |         0.0088 |                  2.112 |
 
----
 
 ## Table S10. Self-reported (CSQ240) vs PST-defined OD
 
@@ -391,7 +381,6 @@
 | IV            | +0.048 (+0.011, +0.084), p=0.012 | -0.002 (-0.036, +0.032), p=0.905 | YES              | no                 |
 | ASTP          | +0.011 (+0.003, +0.020), p=0.009 | +0.003 (-0.009, +0.015), p=0.602 | YES              | no                 |
 
----
 
 ## Table S11. Hour-by-hour OD effect on mean MIMS with BH-FDR
 
@@ -424,7 +413,6 @@
 | 22:00  | -0.884 | (-1.521, -0.247) | .008  | .012  | *     |
 | 23:00  | -0.522 | (-0.974, -0.070) | .025  | .032  | *     |
 
----
 
 ## Table S12. Effect modification: 20 OD × modifier interactions
 
@@ -438,7 +426,6 @@
 | IV            | .025*         | .226             |              0.47  |                      0.918 |
 | ASTP          | .043*         | .108             |              0.369 |                      0.086 |
 
----
 
 ## Table S13. Olfactory subtype falsification test (food vs warning vs household)
 
@@ -462,7 +449,6 @@
 | ASTP          | Warning   |  0.004  | (-0.0055, 0.013)  |  0.057 | 0.397 | 0.662 |
 | ASTP          | Household |  0.0068 | (-0.0009, 0.014)  |  0.097 | 0.081 | 0.304 |
 
----
 
 ## Table S14. Minute-level fragmentation phenotype
 
@@ -500,7 +486,6 @@
 | satp_aft                    | SATP afternoon (12-18)            |  -0.013  | (-0.022, -0.0045)   | -0.214 | .005  | 0.006 |
 | satp_eve                    | SATP evening (18-24)              |  -0.011  | (-0.019, -0.0037)   | -0.177 | .005  | 0.006 |
 
----
 
 ## Table S15. Frailty-adjusted M4 sensitivity analysis
 
@@ -514,7 +499,6 @@
 | IV              |  0.048 | (0.011, 0.084)    |      0.048 | (0.011, 0.085)    |               0.049 | (0.012, 0.086)           | -270.0%         |
 | ASTP per-person |  0.011 | (0.0030, 0.020)   |      0.011 | (0.0030, 0.020)   |               0.012 | (0.0030, 0.021)          | -230.0%         |
 
----
 
 ## Table S16. Counterfactual mediation through depression (PHQ-9) and BMI
 
@@ -533,7 +517,6 @@
 | bmi        | IV            | 2,146 | 0.052 (0.014, 0.090)     | 0.049 (0.013, 0.085)     | 0.0024 (-0.0019, 0.0099)    | >.999     |
 | bmi        | ASTP          | 2,146 | 0.013 (0.0026, 0.022)    | 0.012 (0.0035, 0.020)    | 0.0015 (-0.0022, 0.0041)    | >.999     |
 
----
 
 ## Table S17. Compositional analysis of 24-hour activity budget
 
@@ -545,7 +528,6 @@
 | ilr_z2_active_v_sed | active wake ÷ sedentary wake    | -0.162 | (-0.231, -0.093) | <.001 | 1,683 |
 | ilr_z3_mvpa_v_light | MVPA ÷ light intensity          | -0.13  | (-0.225, -0.034) | .009  | 1,683 |
 
----
 
 ## Table S18. Discrete-time hazard analysis of state transitions
 
@@ -558,7 +540,6 @@
 | mean_sed_bout_proxy    | Mean sedentary bout length (min)   |  0.297 | (0.154, 0.440)   | <.001 |  0.259 | 2,055 |
 | transitions_per_day    | Total transitions per day          | -5.823 | (-9.241, -2.405) | .002  | -0.31  | 2,055 |
 
----
 
 ## Table S19. Race/ethnicity-stratified mean MIMS estimates
 
@@ -592,7 +573,6 @@
 | NHAsian          | IV            |         170 |       35 |  -0.041  | (-0.133, 0.052)  | .376  |
 | NHAsian          | ASTP          |         170 |       35 |  -0.013  | (-0.032, 0.0074) | .206  |
 
----
 
 ## Table S20. Selection bias: included vs excluded PST-eligible participants
 
@@ -608,7 +588,6 @@
 | phq9_score   |             3.19506  |           2.51467  | <.001            |
 | pir          |             2.68503  |           3.03388  | <.001            |
 
----
 
 ## Table S21. Stratified split-half replication
 

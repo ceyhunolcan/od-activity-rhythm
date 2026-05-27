@@ -8,7 +8,6 @@
 **Correspondence:** ceyhun.olcan.27@dartmouth.edu
 **ORCID:** [0000-0002-6326-6071](https://orcid.org/0000-0002-6326-6071)
 
----
 
 ## ABSTRACT
 
@@ -20,7 +19,6 @@
 
 **Interpretation.** The integrated phenotype — preserved sleep activity, symmetric waking-hour transition dampening, and disengagement into nonwear — is more consistent with central than peripheral sensory-motivational mechanisms, though cross-sectional data cannot adjudicate this directly. The activity-rhythm signature warrants prospective testing in the OD–mortality association; paper #2 is pre-registered.
 
----
 
 ## INTRODUCTION
 
@@ -32,7 +30,6 @@ Wrist-worn accelerometry — added to NHANES 2011–12 and 2013–14 — support
 
 We characterize the OD-associated signature across activity volume, 24-hour rhythm, sleep, and minute-level fragmentation, and run four pre-specified mechanistic analyses: a subtype falsification test of the food-appeal hypothesis using the four food vs. four non-food PST odors; counterfactual mediation through depression and body mass index (BMI); compositional data analysis of the 24-hour activity budget; and minute-level decomposition of transition probabilities, bout-length distributions, hazard rates, and time-of-day patterns. Together these analyses examine whether the OD–activity link operates through the most-cited mechanism (food appeal) or carries variance not explained by it, and characterize the temporal structure of the activity difference.
 
----
 
 ## METHODS
 
@@ -68,7 +65,6 @@ Counterfactual mediation analysis (Imai-Keele-Tingley framework)[20] estimated n
 
 Analyses were conducted in Python 3.12 with parallel verification in R 4.6 (`survey` package); β estimates agreed to the third decimal across all 40 primary fits and SEs within ~5%. Code, analytic-dataset reconstruction scripts, and the minute-level pipeline are deposited at https://github.com/ceyhunolcan/od-activity-rhythm (Zenodo concept DOI 10.5281/zenodo.20132927).
 
----
 
 ## RESULTS
 
@@ -134,7 +130,6 @@ Stratified random split-half replication (preserving OD prevalence in both halve
 
 Continuous PST: each additional correctly identified odor was associated with +0.16 MIMS units (*p* = 0.005), +0.009 IS (*p* = 0.019), −0.013 IV (*p* = 0.026), −0.003 ASTP (*p* = 0.012). Stricter PST ≤4 produced systematically larger effects (consistent with monotonic dose-response); MVPA at the stricter threshold gave β = +0.68 (*p* = 0.83), plausibly small-sample variance. Severity-gradient contrasts showed direction-consistency but no contrast survived BH-FDR (Table S4). ASTP under 95th-percentile winsorization gave β = +0.0075 (*p* = 0.050) and 99th-percentile β = +0.0100 (*p* = 0.012); the per-person ASTP effect is directionally robust but partially driven by upper-tail observations (resolved at the minute level via the symmetric ASTP+/SATP− finding above). Primary E-values: 1.41–1.71 (point), 1.12–1.38 (CI bound) (Table S3). Race-stratified mean MIMS estimates (Table S19) ranged from β = +0.51 (Mexican American) to β = −2.62 (Other Hispanic, 95% CI −4.50 to −0.74) with wide overlapping intervals; race-stratified inference is exploratory and underpowered for definitive between-group comparison, but the larger Other Hispanic estimate and consistent Non-Hispanic White estimate (β = −0.81, 95% CI −1.23 to −0.39) warrant follow-up.
 
----
 
 ## DISCUSSION
 
@@ -166,7 +161,6 @@ Code and analytic-dataset reconstruction are available at https://github.com/cey
 
 **Implication and forward.** The directly testable prediction from these cross-sectional findings is that the activity signature partially carries OD's mortality association. In prospective NHANES Linked Mortality follow-up, the OD–mortality hazard ratio should attenuate when activity volume and rhythm-fragmentation metrics enter the model. Pre-registration of this analysis with a 30%-attenuation decision threshold has been deposited prior to obtaining mortality data. A substantial attenuation would support the activity pattern as a partial behavioral pathway between OD and downstream outcomes; a small attenuation would suggest parallel manifestations of a shared upstream process. Either result advances the empirical picture without requiring strong claims from the present data.
 
----
 
 ## REFERENCES
 
@@ -195,7 +189,6 @@ Code and analytic-dataset reconstruction are available at https://github.com/cey
 23. **Benjamini Y, Hochberg Y.** Controlling the false discovery rate: a practical and powerful approach to multiple testing. *J R Stat Soc B*. 1995;57(1):289–300.
 24. **On A, Moein ST, Khan R, Doty RL.** The 8-item NHANES pocket smell test®: normative data. *Appl Neuropsychol Adult*. 2025;32(4):922–927.
 
----
 
 ## CONFLICT OF INTEREST AND AUTHORSHIP
 
