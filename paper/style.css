@@ -16,7 +16,7 @@ h1, h2, h3 {
 
 p {
     margin-bottom: 0.8em;
-    text-align: justify;
+    text-align: left;
 }
 
 figure {
@@ -48,4 +48,12 @@ table {
 
 code, pre {
     font-family: Menlo, monospace;
+}
+
+
+body {
+    letter-spacing: -0.01em;
+    word-spacing: -0.02em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
