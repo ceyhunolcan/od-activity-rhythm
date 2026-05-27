@@ -1,4 +1,4 @@
-# Olfactory dysfunction, daytime activity reduction, and 24-hour rhythm fragmentation - but not food-odor recognition - in NHANES 2013–2014
+# Olfactory Dysfunction and Wake-State Behavioral Fragmentation in NHANES 2013–2014
 
 **Ceyhun Olcan¹,²**
 
