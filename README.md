@@ -2,7 +2,7 @@
 
 Analysis code, manuscript, and supplementary materials for:
 
-**Olfactory dysfunction, daytime activity reduction, and 24-hour rhythm fragmentation - but not food-odor recognition - in NHANES 2013–2014**
+**Olfactory dysfunction, daytime activity reduction, and 24-hour rhythm fragmentation — but not food-odor recognition — in NHANES 2013–2014**
 
 Ceyhun Olcan, Dartmouth College.
 
@@ -35,7 +35,7 @@ docs/
   variable_dictionary.md     data dictionary for analytic_full.csv
 ```
 
-The actual NHANES XPT files are not redistributed - they live at
+The actual NHANES XPT files are not redistributed — they live at
 https://wwwn.cdc.gov/nchs/nhanes/ and are downloaded into the working dir
 before running stage 1.
 
@@ -87,7 +87,7 @@ See `docs/variable_dictionary.md`. The most-used variables:
 If you use this code or build on these findings, please cite:
 
 > Olcan C. Olfactory dysfunction, daytime activity reduction, and 24-hour
-> rhythm fragmentation - but not food-odor recognition - in NHANES 2013–2014.
+> rhythm fragmentation — but not food-odor recognition — in NHANES 2013–2014.
 > medRxiv 2026 (preprint, DOI pending).
 
 For the code archive specifically: cite the Zenodo concept DOI

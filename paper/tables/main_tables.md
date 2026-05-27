@@ -1,6 +1,6 @@
 # Main Tables
 
-**Paper:** Olfactory dysfunction, daytime activity reduction, and 24-hour rhythm fragmentation - but not food-odor recognition - in NHANES 2013–2014
+**Paper:** Olfactory dysfunction, daytime activity reduction, and 24-hour rhythm fragmentation — but not food-odor recognition — in NHANES 2013–2014
 
 **Author:** Ceyhun Olcan
 
@@ -9,7 +9,7 @@
 - Cells show **β (lo, hi)** with significance markers: \*p < 0.05, \*\*p < 0.01, \*\*\*p < 0.001.
 - Coefficients on the native scale of each outcome.
 - M4 covariates: age, sex, race/ethnicity, education, PIR, BMI, smoking, diabetes, comorbidity count, PHQ-9, sinusitis, head injury, n medications.
-- Missing/non-estimable cells: '-'.
+- Missing/non-estimable cells: '—'.
 
 ---
 
@@ -48,7 +48,7 @@
 
 ---
 
-## Table 2. Aim 1 - Activity volume and intensity
+## Table 2. Aim 1 — Activity volume and intensity
 
 *M1–M4 progressive adjustment of OD effects on mean MIMS, sedentary time, and MVPA. Cells: β (95% CI). Survey-weighted, cluster-robust regression with WTMEC2YR weights. *p < 0.05, **p < 0.01, ***p < 0.001. n = 2,055 (M4).*
 
@@ -60,7 +60,7 @@
 
 ---
 
-## Table 3. Aims 2 & 3 - 24-hour rhythm, sleep, and fragmentation
+## Table 3. Aims 2 & 3 — 24-hour rhythm, sleep, and fragmentation
 
 *M1–M4 progressive adjustment of OD effects on rhythm metrics (IS, IV, RA), sleep parameters (TST, WASO, sleep efficiency), and per-person ASTP. Cells: β (95% CI). *p < 0.05, **p < 0.01, ***p < 0.001. n = 2,055 or 1,683 (M4).*
 

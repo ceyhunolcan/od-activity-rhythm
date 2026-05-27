@@ -1,6 +1,6 @@
-# Supplementary Appendix - Tables S1 to S21
+# Supplementary Appendix — Tables S1 to S21
 
-**Paper:** Olfactory dysfunction, daytime activity reduction, and 24-hour rhythm fragmentation - but not food-odor recognition - in NHANES 2013–2014
+**Paper:** Olfactory dysfunction, daytime activity reduction, and 24-hour rhythm fragmentation — but not food-odor recognition — in NHANES 2013–2014
 
 **Author:** Ceyhun Olcan
 
@@ -11,11 +11,11 @@
 - **p-values** are uncorrected; **q-values** are Benjamini-Hochberg FDR-corrected within each test family.
 - **Cohen's *d*** is standardized by the survey-weighted SD of the outcome.
 - Significance markers: \* p < 0.05, \*\* p < 0.01, \*\*\* p < 0.001.
-- Missing/non-estimable cells: '-'.
+- Missing/non-estimable cells: '—'.
 
 ---
 
-## Table S1. M4 model - complete coefficient table
+## Table S1. M4 model — complete coefficient table
 
 *All covariate coefficients (age, sex, race, education, PIR, BMI, smoking, diabetes, comorbidity, PHQ-9, sinusitis, head injury, medications) for each primary outcome. Coefficients are on the native scale of each outcome.*
 
@@ -250,16 +250,16 @@
 
 | Aim                               | Outcome           |       β | 95% CI            | p     |   q (FDR) |
 |:----------------------------------|:------------------|--------:|:------------------|:------|----------:|
-| Aim 1 - Mean daily MIMS (PRIMARY) | Mean MIMS/day     | -0.612  | (-0.930, -0.294)  | <.001 |     0.001 |
-| Aim 1 - Sedentary min/day         | Sedentary min/day | -2.934  | (-16.56, 10.69)   | .663  |     0.663 |
-| Aim 1 - MVPA min/day              | MVPA min/day      | -3.44   | (-6.449, -0.431)  | .026  |     0.04  |
-| Aim 2 - Interdaily stability      | IS                | -0.028  | (-0.053, -0.0040) | .024  |     0.036 |
-| Aim 2 - Intradaily variability    | IV                |  0.048  | (0.011, 0.084)    | .012  |     0.036 |
-| Aim 2 - Relative amplitude        | RA                | -0.0067 | (-0.015, 0.0018)  | .117  |     0.117 |
-| Aim 3 - Total sleep time (min)    | Total sleep (min) | -2.753  | (-12.74, 7.235)   | .577  |     0.577 |
-| Aim 3 - Sleep efficiency          | Sleep efficiency  | -0.0059 | (-0.015, 0.0036)  | .215  |     0.287 |
-| Aim 3 - WASO (min)                | WASO (min)        |  2.219  | (-1.211, 5.649)   | .196  |     0.287 |
-| Aim 3 - ASTP                      | ASTP              |  0.011  | (0.0030, 0.020)   | .009  |     0.036 |
+| Aim 1 — Mean daily MIMS (PRIMARY) | Mean MIMS/day     | -0.612  | (-0.930, -0.294)  | <.001 |     0.001 |
+| Aim 1 — Sedentary min/day         | Sedentary min/day | -2.934  | (-16.56, 10.69)   | .663  |     0.663 |
+| Aim 1 — MVPA min/day              | MVPA min/day      | -3.44   | (-6.449, -0.431)  | .026  |     0.04  |
+| Aim 2 — Interdaily stability      | IS                | -0.028  | (-0.053, -0.0040) | .024  |     0.036 |
+| Aim 2 — Intradaily variability    | IV                |  0.048  | (0.011, 0.084)    | .012  |     0.036 |
+| Aim 2 — Relative amplitude        | RA                | -0.0067 | (-0.015, 0.0018)  | .117  |     0.117 |
+| Aim 3 — Total sleep time (min)    | Total sleep (min) | -2.753  | (-12.74, 7.235)   | .577  |     0.577 |
+| Aim 3 — Sleep efficiency          | Sleep efficiency  | -0.0059 | (-0.015, 0.0036)  | .215  |     0.287 |
+| Aim 3 — WASO (min)                | WASO (min)        |  2.219  | (-1.211, 5.649)   | .196  |     0.287 |
+| Aim 3 — ASTP                      | ASTP              |  0.011  | (0.0030, 0.020)   | .009  |     0.036 |
 
 ---
 
