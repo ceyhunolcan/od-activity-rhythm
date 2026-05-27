@@ -203,12 +203,12 @@ Code and analytic-dataset reconstruction are available at https://github.com/cey
 
 # Figures
 
-![Figure 1. STROBE cohort flow diagram.](figures/figure1_strobe.png)
+![Figure 1. STROBE cohort flow diagram.](figures/cropped/figure1_strobe.png)
 
-![Figure 2. Twenty-four-hour activity profile by olfactory dysfunction status.](figures/figure2_hourly_profile.png)
+![Figure 2. Twenty-four-hour activity profile by olfactory dysfunction status.](figures/cropped/figure2_hourly_profile.png)
 
-![Figure 3. Fully adjusted OD associations with primary activity and rhythm outcomes.](figures/figure3_forest.png)
+![Figure 3. Fully adjusted OD associations with primary activity and rhythm outcomes.](figures/cropped/figure3_forest.png)
 
-![Figure 4. Age-stratified effect modification for OD-associated activity differences.](figures/figure4_effect_modification_age.png)
+![Figure 4. Age-stratified effect modification for OD-associated activity differences.](figures/cropped/figure4_effect_modification_age.png)
 
-![Figure 5. Minute-level fragmentation phenotype: ASTP/SATP symmetry, bout structure, prolonged sitting, and time-of-day decomposition.](figures/figure5_minute_level_fragmentation.png)
+![Figure 5. Minute-level fragmentation phenotype: ASTP/SATP symmetry, bout structure, prolonged sitting, and time-of-day decomposition.](figures/cropped/figure5_minute_level_fragmentation.png)
