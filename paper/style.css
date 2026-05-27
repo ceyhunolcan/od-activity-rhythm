@@ -1,32 +1,21 @@
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  max-width: 850px;
-  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 780px;
+  margin: 0 auto;
   padding: 42px;
-  font-size: 12pt;
-  line-height: 1.6;
+  font-size: 11.5pt;
+  line-height: 1.55;
   color: #111;
-  background: white;
 }
 
 h1 {
-  font-size: 28pt;
-  line-height: 1.1;
-  margin-bottom: 18px;
-  font-weight: 700;
+  font-size: 24pt;
+  line-height: 1.15;
 }
 
 h2 {
-  font-size: 18pt;
-  margin-top: 42px;
-  margin-bottom: 12px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 6px;
-}
-
-h3 {
-  font-size: 15pt;
-  margin-top: 28px;
+  font-size: 16pt;
+  margin-top: 34px;
 }
 
 p {
@@ -35,60 +24,42 @@ p {
 
 figure {
   page-break-inside: avoid;
-  margin: 50px auto;
+  margin: 36px auto;
   text-align: center;
 }
 
 img {
   display: block;
-  margin: 0 auto;
-  width: auto;
-  max-width: 88%;
-  max-height: 680px;
+  margin: 12px auto;
+  max-width: 95%;
+  max-height: 720px;
+  height: auto;
   object-fit: contain;
-  border-radius: 4px;
 }
 
-figcaption {
-  margin-top: 12px;
-  font-size: 10.5pt;
-  line-height: 1.45;
-  color: #333;
-  text-align: justify;
-  max-width: 88%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-table {
+.fig-landscape {
+  page-break-before: always;
+  page-break-after: always;
   width: 100%;
-  border-collapse: collapse;
-  margin: 30px 0;
-  font-size: 10.5pt;
+  text-align: center;
 }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 8px;
-}
-
-blockquote {
-  border-left: 4px solid #ccc;
-  padding-left: 14px;
-  color: #555;
-}
-
-@page {
-  margin: 0.85in;
-}
-
-
-
-img[src*="figure1"] {
-  width: 100% !important;
-  max-width: 100% !important;
+.fig-landscape img {
+  width: 95vw !important;
+  max-width: 95vw !important;
+  max-height: 6.8in !important;
   height: auto !important;
-  max-height: none !important;
   object-fit: contain !important;
 }
 
+.fig-caption {
+  font-size: 10.5pt;
+  line-height: 1.35;
+  text-align: justify;
+  max-width: 95%;
+  margin: 10px auto 24px auto;
+}
+
+@page {
+  margin: 0.75in;
+}
