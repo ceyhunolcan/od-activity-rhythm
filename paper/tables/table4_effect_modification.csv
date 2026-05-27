@@ -1,0 +1,13 @@
+Outcome,Modifier,p_interaction,Effect at modifier=0,Effect at modifier=1
+mims_mean_per_day,Age ≥60 (vs 40-59),0.010**,0.071 (-0.675 to 0.817),-1.336 (-1.878 to -0.793)
+mims_mean_per_day,Female (vs male),0.543,-0.699 (-1.094 to -0.303),-0.483 (-1.047 to 0.081)
+mims_mean_per_day,Ever smoker (vs never),0.170,-0.867 (-1.350 to -0.385),-0.335 (-0.881 to 0.211)
+mims_mean_per_day,PHQ-9 ≥10 (vs <10),0.094,-0.554 (-0.907 to -0.201),-1.388 (-2.259 to -0.517)
+IV,Age ≥60 (vs 40-59),0.020*,-0.031 (-0.110 to 0.048),0.108 (0.048 to 0.167)
+IV,Female (vs male),0.226,0.027 (-0.023 to 0.078),0.078 (0.017 to 0.138)
+IV,Ever smoker (vs never),0.473,0.029 (-0.046 to 0.105),0.065 (0.018 to 0.113)
+IV,PHQ-9 ≥10 (vs <10),0.919,0.047 (0.009 to 0.086),0.054 (-0.079 to 0.187)
+astp,Age ≥60 (vs 40-59),0.035*,-0.005 (-0.024 to 0.013),0.024 (0.010 to 0.038)
+astp,Female (vs male),0.108,0.017 (0.006 to 0.028),0.003 (-0.010 to 0.015)
+astp,Ever smoker (vs never),0.306,0.016 (0.008 to 0.025),0.006 (-0.011 to 0.023)
+astp,PHQ-9 ≥10 (vs <10),0.086,0.010 (0.000 to 0.019),0.033 (0.010 to 0.056)
