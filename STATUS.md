@@ -1,6 +1,6 @@
 # Project status
 
-## Paper #1 (this repo): cross-sectional OD × activity in NHANES 2013–2014
+## Paper #1 (this repo): cross-sectional OD × activity in NHANES 2013-2014
 
 | | |
 |---|---|
@@ -18,7 +18,7 @@
 |---|---|
 | Status | Pre-registered, awaiting completion of paper #1 review cycle |
 | Pre-registration | OSF [10.17605/OSF.IO/ZX8RN](https://doi.org/10.17605/OSF.IO/ZX8RN) |
-| Decision threshold | 30% attenuation of OD–mortality HR when activity signature added to Cox model |
+| Decision threshold | 30% attenuation of OD-mortality HR when activity signature added to Cox model |
 | Data source | NHANES Linked Mortality File (public-use, downloaded after pre-registration) |
 | Lock-in date | Pre-registration locked May 2026 |
 

@@ -1,6 +1,6 @@
 # Main Tables
 
-**Paper:** Olfactory dysfunction, daytime activity reduction, and 24-hour rhythm fragmentation — but not food-odor recognition — in NHANES 2013–2014
+**Paper:** Olfactory dysfunction, daytime activity reduction, and 24-hour rhythm fragmentation: but not food-odor recognition: in NHANES 2013-2014
 
 **Author:** Ceyhun Olcan
 
@@ -9,7 +9,7 @@
 - Cells show **β (lo, hi)** with significance markers: \*p < 0.05, \*\*p < 0.01, \*\*\*p < 0.001.
 - Coefficients on the native scale of each outcome.
 - M4 covariates: age, sex, race/ethnicity, education, PIR, BMI, smoking, diabetes, comorbidity count, PHQ-9, sinusitis, head injury, n medications.
-- Missing/non-estimable cells: '—'.
+- Missing/non-estimable cells: ':'.
 
 
 ## Table 1. Sample characteristics by olfactory dysfunction status
@@ -35,7 +35,7 @@
 | Comorbidity count        | 1.0 (1.3)     | 1.0 (1.3)     | 1.2 (1.3)     | 0.007  |
 | PHQ-9 score              | 3.0 (4.2)     | 3.0 (4.2)     | 3.0 (3.9)     | 0.916  |
 | PHQ-9 ≥ 10               | 7.8%          | 7.9%          | 6.9%          | 0.929  |
-| PST score (0–8)          | 7.0 (1.2)     | 7.3 (0.8)     | 4.4 (1.0)     | <0.001 |
+| PST score (0-8)          | 7.0 (1.2)     | 7.3 (0.8)     | 4.4 (1.0)     | <0.001 |
 | Mean daily MIMS          | 13.8 (3.3)    | 14.0 (3.2)    | 12.6 (3.4)    | <0.001 |
 | Sedentary, min/day       | 410.4 (89.8)  | 409.6 (89.7)  | 416.9 (90.3)  | 0.028  |
 | MVPA, min/day            | 28.9 (33.4)   | 30.0 (33.5)   | 19.2 (30.7)   | <0.001 |
@@ -46,9 +46,9 @@
 | RA                       | 0.954 (0.039) | 0.956 (0.036) | 0.939 (0.061) | <0.001 |
 
 
-## Table 2. Aim 1 — Activity volume and intensity
+## Table 2. Aim 1: Activity volume and intensity
 
-*M1–M4 progressive adjustment of OD effects on mean MIMS, sedentary time, and MVPA. Cells: β (95% CI). Survey-weighted, cluster-robust regression with WTMEC2YR weights. *p < 0.05, **p < 0.01, ***p < 0.001. n = 2,055 (M4).*
+*M1-M4 progressive adjustment of OD effects on mean MIMS, sedentary time, and MVPA. Cells: β (95% CI). Survey-weighted, cluster-robust regression with WTMEC2YR weights. *p < 0.05, **p < 0.01, ***p < 0.001. n = 2,055 (M4).*
 
 | Outcome           | M1 (Unadjusted)            | M2 (+ demographics)       | M3 (+ comorbidities)       | M4 (+ depression, ENT, meds)   |
 |:------------------|:---------------------------|:--------------------------|:---------------------------|:-------------------------------|
@@ -57,9 +57,9 @@
 | MVPA (min/d)      | -10.90 (-14.50, -7.200)*** | -4.500 (-7.600, -1.300)** | -3.800 (-6.600, -1.000)*   | -3.400 (-6.400, -0.400)*       |
 
 
-## Table 3. Aims 2 & 3 — 24-hour rhythm, sleep, and fragmentation
+## Table 3. Aims 2 & 3: 24-hour rhythm, sleep, and fragmentation
 
-*M1–M4 progressive adjustment of OD effects on rhythm metrics (IS, IV, RA), sleep parameters (TST, WASO, sleep efficiency), and per-person ASTP. Cells: β (95% CI). *p < 0.05, **p < 0.01, ***p < 0.001. n = 2,055 or 1,683 (M4).*
+*M1-M4 progressive adjustment of OD effects on rhythm metrics (IS, IV, RA), sleep parameters (TST, WASO, sleep efficiency), and per-person ASTP. Cells: β (95% CI). *p < 0.05, **p < 0.01, ***p < 0.001. n = 2,055 or 1,683 (M4).*
 
 | Outcome                     | M1 (Unadjusted)             | M2 (+ demographics)       | M3 (+ comorbidities)      | M4 (+ depression, ENT, meds)   |
 |:----------------------------|:----------------------------|:--------------------------|:--------------------------|:-------------------------------|
