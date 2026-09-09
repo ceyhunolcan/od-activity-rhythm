@@ -6,7 +6,7 @@ Analysis code, manuscript, and supplementary materials for:
 
 Ceyhun Olcan, Dartmouth College.
 
-- **medRxiv preprint**: https://doi.org/10.1101/2026.MM.DD.XXXXXXXX *(DOI pending screening; typically 2-4 business days after submission)*
+- **Preprint**: https://doi.org/10.21203/rs.3.rs-9830931/v1 *(Research Square, posted 28 May 2026; not peer reviewed)*
 - **OSF pre-registration** (paper #2 follow-up): https://doi.org/10.17605/OSF.IO/ZX8RN
 - **Zenodo archive of this repo** (citable concept DOI): https://doi.org/10.5281/zenodo.20132927
 
@@ -40,23 +40,44 @@ before running stage 1.
 
 ## Reproducing the analysis
 
-1. Download NHANES 2013-2014 cycle files: DEMO_H, BMX_H, BPX_H, CSX_H, CSQ_H,
-   PAXMIN_H, PAXHD_H, PAQ_H, SMQ_H, DIQ_H, GHB_H, MCQ_H, BPQ_H, DPQ_H, INQ_H,
-   HUQ_H, RXQ_RX_H, RDQ_H, SLQ_H.
+1. Download NHANES 2013-2014 cycle files. Stage 1 reads DEMO_H, BMX_H, BPX_H,
+   CSX_H, CSQ_H, SMQ_H, DIQ_H, GHB_H, MCQ_H, BPQ_H, DPQ_H, HUQ_H and RXQ_RX_H.
+   Stages 2, 25 and 8 read PAXMIN_H and PAXHD_H. PAXMIN_H is about 8.7 GB and
+   is served from `ftp.cdc.gov/pub/NHANES/LargeDataFiles/`.
 
 2. From the directory containing the XPTs:
    ```bash
    python src/stage1_build_analytic.py
-   python src/stage25_extract_hourly.py \
+
+   python src/stage2_extract_paxmin.py \
        --paxmin PAXMIN_H.xpt --paxhd PAXHD_H.xpt \
-       --features paxmin_features.csv \
        --seqn analytic_seqn_list.csv \
        --out paxmin_output
+
+   python src/stage25_extract_hourly.py \
+       --paxmin PAXMIN_H.xpt --paxhd PAXHD_H.xpt \
+       --features paxmin_output/paxmin_features.csv \
+       --seqn analytic_seqn_list.csv \
+       --out paxmin_output
+
    python src/stage8_minute_level_fragmentation.py
+
+   python src/stage29_build_activity_summary.py \
+       --features paxmin_output/paxmin_features.csv \
+       --cutset karas_table4 \
+       --out activity_summary.csv
+
    Rscript src/stage30_analysis.R
    ```
 
-   Stage 8 takes ~25 min on a 2022 MacBook Air; everything else is faster.
+   Stage 2 and stage 8 each stream the whole of PAXMIN_H and take on the order
+   of half an hour on a 2022 MacBook Air; the other stages are faster.
+
+   Stage 29 selects which intensity cut-point set supplies the sedentary,
+   light and MVPA minute counts. `karas_table4` uses the MIMS values published
+   in Karas et al. Table 4 (sedentary 10.558, light-to-MVPA 19.614). The
+   original analysis used a set labelled `karas` whose 37.5 upper bound does
+   not appear in that paper; it is retained so the two can be compared.
 
 ## Dependencies
 
@@ -87,7 +108,7 @@ If you use this code or build on these findings, please cite:
 
 > Olcan C. Olfactory dysfunction, daytime activity reduction, and 24-hour
 > rhythm fragmentation: but not food-odor recognition: in NHANES 2013-2014.
-> medRxiv 2026 (preprint, DOI pending).
+> Research Square 2026 (preprint). doi:10.21203/rs.3.rs-9830931/v1
 
 For the code archive specifically: cite the Zenodo concept DOI
 [10.5281/zenodo.20132927](https://doi.org/10.5281/zenodo.20132927).

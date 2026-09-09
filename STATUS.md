@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| Status | Submitted to medRxiv and *Lancet Healthy Longevity* (May 2026) |
+| Status | Preprint posted on Research Square, May 2026 ([10.21203/rs.3.rs-9830931/v1](https://doi.org/10.21203/rs.3.rs-9830931/v1)); not submitted to a journal |
 | Manuscript | `paper/manuscript.pdf` |
 | Combined submission PDF | `paper/manuscript_complete.pdf` (text + tables + figures) |
 | Supplementary appendix | `paper/supplementary/supplementary_appendix.pdf` |
@@ -16,7 +16,7 @@
 
 | | |
 |---|---|
-| Status | Pre-registered, awaiting completion of paper #1 review cycle |
+| Status | Pre-registered, deferred until paper #1 is finalised |
 | Pre-registration | OSF [10.17605/OSF.IO/ZX8RN](https://doi.org/10.17605/OSF.IO/ZX8RN) |
 | Decision threshold | 30% attenuation of OD-mortality HR when activity signature added to Cox model |
 | Data source | NHANES Linked Mortality File (public-use, downloaded after pre-registration) |

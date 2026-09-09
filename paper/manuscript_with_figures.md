@@ -165,7 +165,7 @@ Code and analytic-dataset reconstruction are available at https://github.com/cey
 ## REFERENCES
 
 1. **Hoffman HJ, Rawal S, Li CM, Duffy VB.** New chemosensory component in the U.S. National Health and Nutrition Examination Survey (NHANES): first-year results for measured olfactory dysfunction. *Rev Endocr Metab Disord*. 2016;17(2):221-240. PMID: 27287364.
-2. **Namiranian K, Gauthier A-C, Gilbert J-A, Mathieu M-E.** Olfactory dysfunction and physical activity in U.S. adults from the National Health and Nutrition Examination Survey 2013-2014. *Front Sports Act Living*. 2024;6:1394858.
+2. **Namiranian K, Gauthier A-C, Gilbert J-A, Mathieu M-E.** The association between parameters of physical activity and olfactory function: the importance of frequency and moderate intensity. *Front Sports Act Living*. 2024;6:1394858.
 3. **Rawal S, Hoffman HJ, Bainbridge KE, Huedo-Medina TB, Duffy VB.** Prevalence and risk factors of self-reported smell and taste alterations: results from the 2011-2012 US National Health and Nutrition Examination Survey (NHANES). *Chem Senses*. 2016;41(1):69-76. PMID: 26487703.
 4. **Schubert CR, Cruickshanks KJ, Nondahl DM, Klein BE, Klein R, Fischer ME.** Association of exercise with lower long-term risk of olfactory impairment in older adults. *JAMA Otolaryngol Head Neck Surg*. 2013;139(10):1061-1066.
 5. **Devanand DP, Lee S, Manly J, et al.** Olfactory deficits predict cognitive decline and Alzheimer dementia in an urban community. *Neurology*. 2015;84(2):182-189. PMID: 25471394.
