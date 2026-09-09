@@ -177,8 +177,8 @@ Code and analytic-dataset reconstruction are available at https://github.com/cey
 11. **Belcher BR, Wolff-Hughes DL, Dooley EE, et al.** US population-referenced percentiles for wrist-worn accelerometer-derived activity. *Med Sci Sports Exerc*. 2021;53(11):2455-2464. PMID: 34115727.
 12. **Van Someren EJW, Swaab DF, Colenda CC, Cohen W, McCall WV, Rosenquist PB.** Bright light therapy: improved sensitivity to its effects on rest-activity rhythms in Alzheimer patients by application of nonparametric methods. *Chronobiol Int*. 1999;16(4):505-518.
 13. **Choi L, Liu Z, Matthews CE, Buchowski MS.** Validation of accelerometer wear and nonwear time classification algorithm. *Med Sci Sports Exerc*. 2011;43(2):357-364. PMID: 20581716.
-14. **Xu Y, Su S, Li X, Mansuri A, McCall WV, Wang X.** Investigating the relationship between accelerometer-derived sleep variables and cardiometabolic risk factors. *Sci Rep*. 2022;12:20665.
-15. **Vidil S, Danilevicz IM, Dugravot A, et al.** Activity rhythm fragmentation and all-cause mortality in older adults: a multi-cohort accelerometry study. *Nat Commun*. 2025;16:66407.
+14. **Xu Y, Su S, Li X, Mansuri A, McCall WV, Wang X.** Blunted rest-activity circadian rhythm increases the risk of all-cause, cardiovascular disease and cancer mortality in US adults. *Sci Rep*. 2022;12:20665.
+15. **Vidil S, Danilevicz IM, Dugravot A, et al.** Circadian rhythm profiles derived from accelerometer measures of the sleep-wake cycle in two cohort studies. *Nat Commun*. 2025;16:11357.
 16. **VanderWeele TJ, Ding P.** Sensitivity analysis in observational research: introducing the E-value. *Ann Intern Med*. 2017;167(4):268-274.
 17. **Sterne JAC, White IR, Carlin JB, et al.** Multiple imputation for missing data in epidemiological and clinical research: potential and pitfalls. *BMJ*. 2009;338:b2393.
 18. **Doty RL.** The olfactory vector hypothesis of neurodegenerative disease: is it viable? *Ann Neurol*. 2008;63(1):7-15. PMID: 18232016.
