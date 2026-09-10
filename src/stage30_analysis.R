@@ -14,7 +14,7 @@
 #   table3_Aim2_3.csv                     -- rhythm / sleep / fragmentation
 #   tableS1_all_models_coefficients.csv   -- M1..M4, all covariates
 #   tableS2_M3_with_BHFDR.csv             -- M3 primary outcomes, q-values
-#   tableS5_MICE_pooled.csv               -- MICE-pooled M4 (mitools::MIcombine)
+#   tableS5_MICE_pooled.csv               -- MICE-pooled M5 (mitools::MIcombine)
 
 suppressPackageStartupMessages({
     library(survey)
@@ -145,7 +145,7 @@ t3 <- res_df %>% filter(outcome %in% c("IS", "IV", "ASTP",
 write_csv(t3, "table3_Aim2_3.csv")
 
 
-# --- MICE pooled M4 (mitools::MIcombine for survey-design variance) --------
+# --- MICE pooled M5 (mitools::MIcombine for survey-design variance) --------
 #
 # pool() from mice cannot propagate complex-survey variance correctly.
 # The right approach is: per imputation, build the survey design and fit
@@ -160,12 +160,18 @@ mice_vars <- unique(c("age", "female", "race_eth", "education", "pir",
                       intersect(c(primary_outcomes, secondary_outcomes),
                                 colnames(df))))
 
-mids <- mice(df[, mice_vars], m = 10, seed = 42, printFlag = FALSE)
+# mice needs a factor, not a character column: with smoker_status as character
+# it is logged out as "constant" and takes no part in the imputation model.
+mice_input <- df[, mice_vars]
+for (v in names(mice_input)) {
+    if (is.character(mice_input[[v]])) mice_input[[v]] <- factor(mice_input[[v]])
+}
+mids <- mice(mice_input, m = 10, seed = 42, printFlag = FALSE)
 
 mice_rows <- list()
 for (out in primary_outcomes) {
     if (!out %in% colnames(df)) next
-    f <- as.formula(paste(out, "~", m4_rhs))
+    f <- as.formula(paste(out, "~", m5_rhs))
 
     # fit svyglm on each imputed copy
     fits <- lapply(seq_len(mids$m), function(i) {
@@ -191,7 +197,15 @@ for (out in primary_outcomes) {
             se       = r[["se"]],
             lo95     = r[["(lower"]],
             hi95     = r[["upper)"]],
-            missInfo = r[["missInfo"]],
+            # summary.MIcombine formats missInfo as a rounded string ("0 %"),
+            # which hides values below 0.5%. Recompute from Rubin's variance
+            # components: between / (between + within), as a proportion.
+            missInfo = {
+                b <- combined$variance["od_binary", "od_binary"]
+                w <- mean(sapply(fits, function(m)
+                         vcov(m)["od_binary", "od_binary"]))
+                (b - w) / b
+            },
             stringsAsFactors = FALSE
         )
     }
