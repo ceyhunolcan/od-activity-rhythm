@@ -12,8 +12,8 @@
 # Outputs:
 #   table2_Aim1.csv                       -- volume / intensity
 #   table3_Aim2_3.csv                     -- rhythm / sleep / fragmentation
-#   tableS1_M4_full_coefficients.csv      -- M4 with all covariates
-#   tableS2_M4_with_BHFDR.csv             -- M4 primary outcomes, q-values
+#   tableS1_all_models_coefficients.csv   -- M1..M4, all covariates
+#   tableS2_M3_with_BHFDR.csv             -- M3 primary outcomes, q-values
 #   tableS5_MICE_pooled.csv               -- MICE-pooled M4 (mitools::MIcombine)
 
 suppressPackageStartupMessages({
@@ -110,12 +110,19 @@ sds <- sapply(c(primary_outcomes, secondary_outcomes), function(v) {
 })
 res_df$cohen_d <- res_df$beta / sds[res_df$outcome]
 
-# BH-FDR within the primary outcome family at M4
-m4_primary <- res_df %>% filter(model == "M4", outcome %in% primary_outcomes)
-m4_primary$q_bh <- p.adjust(m4_primary$p, method = "BH")
+# BH-FDR within the primary outcome family at M3.
+#
+# M3 rather than M4 because the NHANES 2013-2014 design has 15 degrees of
+# freedom (2 PSUs nested in 15 strata). M4's 16 covariates exhaust them, so
+# svyglm returns NA for the M4 p-values and no correction is possible there.
+# M3 carries 11 covariates and fits within the design df. M4 point estimates
+# are still written to tableS1 and are reported as a sensitivity analysis
+# showing the estimates hold under further adjustment, without inference.
+m3_primary <- res_df %>% filter(model == "M3", outcome %in% primary_outcomes)
+m3_primary$q_bh <- p.adjust(m3_primary$p, method = "BH")
 
-write_csv(res_df,     "tableS1_M4_full_coefficients.csv")
-write_csv(m4_primary, "tableS2_M4_with_BHFDR.csv")
+write_csv(res_df,     "tableS1_all_models_coefficients.csv")
+write_csv(m3_primary, "tableS2_M3_with_BHFDR.csv")
 
 # table 2: M1..M4 for volume / intensity
 t2 <- res_df %>% filter(outcome %in% c("mean_mims", "mvpa_min"))
@@ -186,6 +193,6 @@ if (length(mice_rows)) {
 cat("Done. Wrote:\n",
     "  table2_Aim1.csv\n",
     "  table3_Aim2_3.csv\n",
-    "  tableS1_M4_full_coefficients.csv\n",
-    "  tableS2_M4_with_BHFDR.csv\n",
+    "  tableS1_all_models_coefficients.csv\n",
+    "  tableS2_M3_with_BHFDR.csv\n",
     "  tableS5_MICE_pooled.csv\n", sep = "")

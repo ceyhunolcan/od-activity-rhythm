@@ -27,3 +27,11 @@ __pycache__/
 # derived outputs
 paxmin_features.csv
 stage2.log
+activity_summary.csv
+fragmentation_features.csv
+stage8.log
+table2_Aim1.csv
+table3_Aim2_3.csv
+tableS1_all_models_coefficients.csv
+tableS2_M3_with_BHFDR.csv
+tableS5_MICE_pooled.csv
