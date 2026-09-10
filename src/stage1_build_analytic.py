@@ -60,8 +60,9 @@ HOUSEHOLD_ITEMS = ['CSXLEAOD', 'CSXSOAOD']
 # subset of nasal-symptom variables that produces n=237 depends on the
 # definition (any vs. specific subset). The default below is the union of the
 # five non-"none" symptoms, which is likely *broader* than paper #1's criterion.
-# Adjust NASAL_SYMPTOMS to match your inclusion-flow target.
-NASAL_SYMPTOMS = ['CSQ260a', 'CSQ260d', 'CSQ260g', 'CSQ260i', 'CSQ260n']
+# CSX_H names these uppercase. Lowercase silently matched nothing, so the
+# exclusion never ran.
+NASAL_SYMPTOMS = ['CSQ260A', 'CSQ260D', 'CSQ260G', 'CSQ260I', 'CSQ260N']
 
 # Comorbidity series in MCQ_H -- doctor ever told (1 = Yes)
 COMORBID_VARS = ['MCQ160A', 'MCQ160B', 'MCQ160C', 'MCQ160D', 'MCQ160E', 'MCQ160F',
@@ -113,7 +114,8 @@ def main():
         print(f'  {name}: {len(df[name]):>6} rows')
 
     demo = df['DEMO_H'][['SEQN', 'RIAGENDR', 'RIDAGEYR', 'RIDRETH3', 'DMDEDUC2',
-                         'INDFMPIR', 'WTMEC2YR', 'SDMVSTRA', 'SDMVPSU']].copy()
+                         'INDFMPIR', 'WTMEC2YR', 'SDMVSTRA', 'SDMVPSU',
+                         'RIDEXPRG']].copy()
     demo['SEQN'] = demo['SEQN'].astype('int64')
 
     log = [('MEC examined', len(demo))]
@@ -142,8 +144,11 @@ def main():
     demo = demo.merge(csx_done[pst_cols + nasal_cols + preg_col], on='SEQN', how='inner')
     log.append(('completed PST', len(demo)))
 
-    if 'CSQ241' in demo.columns:
-        demo = demo[demo['CSQ241'] != 1].copy()
+    # RIDEXPRG in DEMO_H is the pregnancy-status variable (1 = pregnant at exam).
+    # CSQ241 was used before, but no PST completer is coded 1 there, so the
+    # exclusion removed nobody.
+    if 'RIDEXPRG' in demo.columns:
+        demo = demo[demo['RIDEXPRG'] != 1].copy()
     log.append(('not pregnant/breastfeeding', len(demo)))
 
     if nasal_cols:
@@ -160,7 +165,7 @@ def main():
         feats['SEQN'] = feats['SEQN'].astype('int64')
         if 'meets_4day_inclusion' not in feats.columns:
             sys.exit('paxmin_features.csv lacks meets_4day_inclusion column')
-        demo = demo.merge(feats[['SEQN', 'valid_days', 'meets_4day_inclusion']],
+        demo = demo.merge(feats[['SEQN', 'n_valid_days', 'meets_4day_inclusion']],
                           on='SEQN', how='left')
         demo = demo[demo['meets_4day_inclusion'] == 1].copy()
         log.append(('>=4 valid accel days', len(demo)))
@@ -187,7 +192,9 @@ def main():
     #          SMQ040 currently smoke (1=Every day, 2=Some days, 3=Not at all, 7/9 sentinel)
     smq = df['SMQ_H'][['SEQN', 'SMQ020', 'SMQ040']].copy()
     smq['SEQN'] = smq['SEQN'].astype('int64')
-    smq['smoker_status'] = np.nan
+    # object dtype, not float: pandas 3.x refuses to upcast a float column when a
+    # string is assigned into it, where 2.x did so with a FutureWarning
+    smq['smoker_status'] = pd.Series(np.nan, index=smq.index, dtype=object)
     smq.loc[smq['SMQ020'] == 2, 'smoker_status'] = 'never'
     smq.loc[(smq['SMQ020'] == 1) & (smq['SMQ040'] == 3),  'smoker_status'] = 'former'
     smq.loc[(smq['SMQ020'] == 1) & (smq['SMQ040'].isin([1, 2])), 'smoker_status'] = 'current'

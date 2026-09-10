@@ -23,3 +23,7 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+
+# derived outputs
+paxmin_features.csv
+stage2.log
