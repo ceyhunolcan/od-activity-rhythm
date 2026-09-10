@@ -54,11 +54,26 @@ secondary_outcomes <- c("total_sleep_min", "WASO", "sleep_efficiency",
 
 # --- progressive adjustment formulae ---------------------------------------
 
+# Five nested models. The NHANES 2013-2014 design carries 15 degrees of freedom
+# (2 PSUs nested in 15 strata), and every fitted parameter spends one, so the
+# ladder runs out before the covariate list does:
+#
+#   M1  od only                                     k= 2  resid df 14
+#   M2  + age, sex, race, education, PIR            k= 7  resid df  9
+#   M3  + BMI, smoking                              k=10  resid df  6   <- primary
+#   M4  + diabetes, comorbidity count               k=12  resid df  4
+#   M5  + PHQ-9, sinusitis, head injury, meds       k=16  resid df  0
+#
+# M3 carries the primary inference because it is the best-powered adjusted
+# specification the design supports. Going on to M4 and M5 moves the OD
+# coefficients by only a few percent while consuming the remaining df, and M5
+# has none left, so svyglm returns NA for its p-values.
 m1_rhs <- "od_binary"
 m2_rhs <- "od_binary + age + female + race_eth + education + pir"
-m3_rhs <- paste(m2_rhs, "+ bmi + smoker_status + diabetes + comorbidity_count")
-m4_rhs <- paste(m3_rhs, "+ phq9 + sinus + head_injury + nmedications")
-models <- list(M1 = m1_rhs, M2 = m2_rhs, M3 = m3_rhs, M4 = m4_rhs)
+m3_rhs <- paste(m2_rhs, "+ bmi + smoker_status")
+m4_rhs <- paste(m3_rhs, "+ diabetes + comorbidity_count")
+m5_rhs <- paste(m4_rhs, "+ phq9 + sinus + head_injury + nmedications")
+models <- list(M1 = m1_rhs, M2 = m2_rhs, M3 = m3_rhs, M4 = m4_rhs, M5 = m5_rhs)
 
 
 # --- complete-case primary inference ---------------------------------------
@@ -110,14 +125,10 @@ sds <- sapply(c(primary_outcomes, secondary_outcomes), function(v) {
 })
 res_df$cohen_d <- res_df$beta / sds[res_df$outcome]
 
-# BH-FDR within the primary outcome family at M3.
-#
-# M3 rather than M4 because the NHANES 2013-2014 design has 15 degrees of
-# freedom (2 PSUs nested in 15 strata). M4's 16 covariates exhaust them, so
-# svyglm returns NA for the M4 p-values and no correction is possible there.
-# M3 carries 11 covariates and fits within the design df. M4 point estimates
-# are still written to tableS1 and are reported as a sensitivity analysis
-# showing the estimates hold under further adjustment, without inference.
+# BH-FDR within the primary outcome family at M3, the primary model (see the
+# ladder above for why). M4 and M5 estimates are written to tableS1 and
+# reported as a sensitivity ladder; M5 has no residual df so it carries point
+# estimates only.
 m3_primary <- res_df %>% filter(model == "M3", outcome %in% primary_outcomes)
 m3_primary$q_bh <- p.adjust(m3_primary$p, method = "BH")
 
