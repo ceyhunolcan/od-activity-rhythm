@@ -9,16 +9,34 @@ import time
 import numpy as np
 import pandas as pd
 
+# Intensity cut-point sets, in MIMS units per minute. sed_max is the upper bound
+# of sedentary; light_max is the lower bound of moderate-to-vigorous.
+#
+# Karas 2022 Table 4 maps three published activity-count cut-offs onto MIMS:
+#
+#   sedentary / active, older adults              AC 1853 -> MIMS 10.558
+#   sedentary / light, young to older adults      AC 2860 -> MIMS 15.047
+#   light / moderate-vigorous, young to older     AC 3940 -> MIMS 19.614
+#
+# The first comes from a different calibration study than the second and third.
+# karas_mixed takes the older-adult sedentary boundary with the young-to-older
+# MVPA boundary, which is what Table 4 invites but does draw the two bounds from
+# separate studies. karas_young_to_older takes both bounds from the single
+# young-to-older calibration, so the sensitivity analysis tests which sedentary
+# boundary is used rather than substituting one boundary type for another.
+#
+# Karas is a statistical harmonization of activity counts onto MIMS, not an
+# energy-expenditure calibration: a GAM fitted on 655 BLSA participants (mean
+# age 69.8, range 22-97) wearing a non-dominant-wrist sensor at 80 Hz, the same
+# sampling frequency as NHANES 2011-2014. No calorimetric criterion is involved.
+# We are not aware of calorimetry-validated MIMS cut-points for general adults.
 CUT_SETS = {
-    # Karas 2022 Table 4 maps activity-count cut-points onto MIMS: count 1853 ->
-    # 10.558 (sedentary/active in older adults) and count 3940 -> 19.614
-    # (light to moderate-vigorous). karas_table4 uses those published values.
-    'karas_table4': {'sed_max': 10.558, 'light_max': 19.614},
-    # Retained for comparison with the original analysis. The 37.5 upper bound
-    # is not a Karas value and its provenance could not be established.
-    'karas':       {'sed_max': 10.558, 'light_max': 37.5},
-    'wolff_hughes':{'sed_max': 8.6,    'light_max': 24.6},
-    'belcher':     {'sed_max': 12.0,   'light_max': 37.6},
+    'karas_mixed':          {'sed_max': 10.558, 'light_max': 19.614},
+    'karas_young_to_older': {'sed_max': 15.047, 'light_max': 19.614},
+    # As used in the original analysis. The sedentary bound is from Karas; the
+    # 37.5 upper bound has no traced source and is retained only so the two can
+    # be compared.
+    'karas_original':       {'sed_max': 10.558, 'light_max': 37.5},
 }
 
 VALID_WEAR_MIN_PER_DAY = 960
@@ -102,7 +120,7 @@ def compute_features_for_participant(g):
             peak1m  = float(wm.max())
             peak30m = (float(pd.Series(wm).rolling(30, min_periods=30).mean().max())
                        if wake_min >= 30 else np.nan)
-            active = wm >= CUT_SETS['karas']['sed_max']
+            active = wm >= CUT_SETS['karas_mixed']['sed_max']
             if active.sum() > 1:
                 trans = int(((active[:-1]) & (~active[1:])).sum())
                 astp  = trans / max(int(active[:-1].sum()), 1)
@@ -201,22 +219,57 @@ def compute_features_for_participant(g):
                            g_v['hour_of_day'].astype(int))
     hourly = g_v.groupby('day_hour_idx')['PAXMTSM'].mean().sort_index()
 
-    if len(hourly) >= 48:
+    # groupby drops hours with no rows, so the index skips them. Reindexing onto
+    # the complete elapsed grid puts those hours back as NaN, which keeps
+    # successive differences between genuinely adjacent hours. Without this a gap
+    # is closed silently and np.diff compares hours that are hours apart; on a
+    # test series with a six-hour gap that inflated IV by 18%, and the direction
+    # of the error depends on where the gap falls.
+    if len(hourly) >= 2:
+        full_index = range(int(hourly.index.min()), int(hourly.index.max()) + 1)
+        hourly = hourly.reindex(full_index)
+
+    if int(hourly.notna().sum()) >= 48:
         x  = hourly.values.astype(float)
-        N  = len(x)
-        gm = x.mean()
+        observed = ~np.isnan(x)
+        n_observed = int(observed.sum())
+        gm = float(np.nanmean(x))
+
         means_by_hour = (g_v.groupby('hour_of_day')['PAXMTSM'].mean()
                             .reindex(range(24)))
-        num_is = N * np.nansum((means_by_hour.values - gm) ** 2)
-        den_is = 24 * np.sum((x - gm) ** 2)
+        num_is = n_observed * np.nansum((means_by_hour.values - gm) ** 2)
+        den_is = 24 * np.nansum((x - gm) ** 2)
         IS = float(num_is / den_is) if den_is > 0 else np.nan
-        d = np.diff(x)
-        num_iv = N * np.sum(d ** 2)
-        den_iv = (N - 1) * np.sum((x - gm) ** 2)
-        IV = float(num_iv / den_iv) if den_iv > 0 else np.nan
-        s = pd.Series(x)
-        M10 = float(s.rolling(10).mean().max())
-        L5  = float(s.rolling(5).mean().min())
+
+        # A difference is defined only where both of its hours were observed.
+        # Each sum is divided by the number of terms that contributed, so gaps
+        # neither inflate nor deflate IV. With no gaps this reduces to the
+        # Van Someren n / (n - 1) form.
+        adjacent_pairs = observed[1:] & observed[:-1]
+        n_pairs = int(adjacent_pairs.sum())
+        mean_sq_diff = np.nansum(np.diff(x) ** 2) / n_pairs if n_pairs else np.nan
+        variance = np.nansum((x - gm) ** 2) / n_observed if n_observed else np.nan
+        IV = float(mean_sq_diff / variance) if variance and variance > 0 else np.nan
+
+        # L5 and M10 are defined on the average-day profile, not on the days
+        # concatenated end to end. Taking rolling windows over the concatenated
+        # series returns the best and worst stretches found on any single day,
+        # which is a maximum over days rather than a property of the typical
+        # day, and it biases M10 up and L5 down as day-to-day variability grows.
+        # The windows wrap past midnight, so the profile is extended by
+        # width - 1 hours before convolving.
+        profile = means_by_hour.values.astype(float)
+        M10 = L5 = np.nan
+        if not np.isnan(profile).any():
+            def circular_window_means(values, width):
+                extended = np.concatenate([values, values[:width - 1]])
+                kernel = np.ones(width) / width
+                return np.convolve(extended, kernel, mode='valid')[:24]
+
+            means_10h = circular_window_means(profile, 10)
+            means_5h = circular_window_means(profile, 5)
+            M10 = float(means_10h.max())
+            L5 = float(means_5h.min())
         RA  = (M10 - L5) / (M10 + L5) if (M10 + L5) > 0 else np.nan
         out.update({'IS': IS, 'IV': IV, 'RA': RA, 'M10': M10, 'L5': L5})
     else:

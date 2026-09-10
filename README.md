@@ -64,7 +64,7 @@ before running stage 1.
 
    python src/stage29_build_activity_summary.py \
        --features paxmin_output/paxmin_features.csv \
-       --cutset karas_table4 \
+       --cutset karas_mixed \
        --out activity_summary.csv
 
    Rscript src/stage30_analysis.R
@@ -74,10 +74,12 @@ before running stage 1.
    of half an hour on a 2022 MacBook Air; the other stages are faster.
 
    Stage 29 selects which intensity cut-point set supplies the sedentary,
-   light and MVPA minute counts. `karas_table4` uses the MIMS values published
-   in Karas et al. Table 4 (sedentary 10.558, light-to-MVPA 19.614). The
-   original analysis used a set labelled `karas` whose 37.5 upper bound does
-   not appear in that paper; it is retained so the two can be compared.
+   light and MVPA minute counts. All three sets are drawn from Karas et al.
+   Table 4, which maps published activity-count cut-offs onto MIMS.
+   `karas_mixed` (10.558 / 19.614) is the default. `karas_young_to_older`
+   (15.047 / 19.614) takes both bounds from a single calibration study rather
+   than two. `karas_original` (10.558 / 37.5) is what the first analysis used;
+   its upper bound has no traced source and it is kept only for comparison.
 
 ## Dependencies
 

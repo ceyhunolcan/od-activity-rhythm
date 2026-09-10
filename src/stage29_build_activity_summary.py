@@ -13,7 +13,7 @@ the sets defined in CUT_SETS in stage 2.
 Usage:
     python src/stage29_build_activity_summary.py \
         --features paxmin_output/paxmin_features.csv \
-        --cutset karas_table4 \
+        --cutset karas_mixed \
         --out activity_summary.csv
 """
 
@@ -38,7 +38,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--features', required=True,
                     help='paxmin_features.csv written by stage 2')
-    ap.add_argument('--cutset', default='karas_table4',
+    ap.add_argument('--cutset', default='karas_mixed',
                     help='cut-point set supplying the intensity minute counts')
     ap.add_argument('--out', default='activity_summary.csv')
     args = ap.parse_args()
